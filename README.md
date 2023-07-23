@@ -1,1 +1,13 @@
 # FFmpeg  openwrt推流24小时直播 openwrt X86_64 FFmpeg无人值守循环推流
+-re   推流 \
+-i   输入文件 \
+-rtsp_transport tcp TCP  推流，UDP 推流缺省即可\
+-stream_loop -1   循环次数，-1为无限循环\
+-c:v libx264 以 H.264   进行重新编码\
+-c:a aac  以 AAC 编码输出音频\
+-b:v 1m  输出视频码率\
+-b:a 320k  输出音频码率\
+-r 25  输出帧率\
+-ar 44100  输出音频采样率\
+-ac 2  输出音频声道数\
+-f flv  以 FLV 格式输出
